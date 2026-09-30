@@ -29,7 +29,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core:4.29.1")
 
 	// Telegram
-	implementation("org.telegram:telegrambots:6.8.0")
+	implementation("org.telegram:telegrambots:5.7.1")
 
 
 	// Lombok
