@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: vault
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vault
+    username: ${DB_USERNAME:vault_user}
+    password: ${DB_PASSWORD:vault_password}
+    driver-class-name: org.postgresql.Driver
+  docker:
+    compose:
+      file: compose.yaml
+      skip-in-tests: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  telegram:
+    enabled: ${TELEGRAM_ENABLED:false}
+    bot-token: ${TELEGRAM_BOT_TOKEN:}
+    allowed-user-ids: ${ALLOWED_USER_IDS:}
+  crypto:
+    encryption-key: ${CARD_ENCRYPTION_KEY:}
+
+logging:
+  level:
+    uz.card.vault: INFO
+    org.springframework.boot: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
