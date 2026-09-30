@@ -6,9 +6,9 @@ spring:
       ddl-auto: none
     show-sql: false
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/vault}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:vault_password}
+    url: ${DATABASE_URL:${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/vault}}
+    username: ${POSTGRES_USER:${DB_USERNAME:postgres}}
+    password: ${POSTGRES_PASSWORD:${DB_PASSWORD:vault_password}}
     driver-class-name: org.postgresql.Driver
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
