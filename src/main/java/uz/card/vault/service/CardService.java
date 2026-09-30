@@ -76,7 +76,7 @@ public class CardService {
 
 	@Transactional(readOnly = true)
 	public List<Card> getCardsByUserAndCategory(Long userTelegramId, Integer categoryId) {
-		return cardRepository.findByOwnerTelegramIdAndCategoryCategoryIdOrderByCreatedAtDesc(
+		return cardRepository.findByOwnerTelegramIdAndCategory_IdOrderByCreatedAtDesc(
 			userTelegramId, categoryId);
 	}
 

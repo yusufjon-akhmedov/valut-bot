@@ -17,6 +17,6 @@ public interface CardRepository extends JpaRepository<Card, UUID> {
 	@Query("SELECT c FROM Card c WHERE c.ownerTelegramId = :ownerTelegramId AND c.cardNumberHash = :hash")
 	Optional<Card> findByOwnerAndHash(@Param("ownerTelegramId") Long ownerTelegramId, @Param("hash") String hash);
 
-	List<Card> findByOwnerTelegramIdAndCategoryCategoryIdOrderByCreatedAtDesc(
+	List<Card> findByOwnerTelegramIdAndCategory_IdOrderByCreatedAtDesc(
 		Long ownerTelegramId, Integer categoryId);
 }
