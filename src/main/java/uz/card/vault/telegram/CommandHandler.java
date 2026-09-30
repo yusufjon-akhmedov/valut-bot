@@ -1,6 +1,5 @@
 package uz.card.vault.telegram;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -27,7 +26,6 @@ public class CommandHandler {
 	private final UserRepository userRepository;
 	private final Messages messages;
 	private final KeyboardBuilder keyboards;
-	private final ObjectMapper objectMapper;
 
 	public void handle(String command, String args, Long chatId, Long userId, BotApi botApi) throws Exception {
 		ensureUserExists(userId);

@@ -1,6 +1,5 @@
 package uz.card.vault.telegram;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -25,7 +24,6 @@ public class CallbackHandler {
 	private final ConversationStateService stateService;
 	private final Messages messages;
 	private final KeyboardBuilder keyboards;
-	private final ObjectMapper objectMapper;
 
 	public void handle(CallbackQuery query, Long userId, BotApi botApi) throws Exception {
 		String data = query.getData();

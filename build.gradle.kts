@@ -23,6 +23,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("com.fasterxml.jackson.core:jackson-databind")
 
 	// Database
 	implementation("org.postgresql:postgresql:42.7.3")

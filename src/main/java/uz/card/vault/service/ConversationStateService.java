@@ -1,7 +1,6 @@
 package uz.card.vault.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,12 +12,16 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor
 @Transactional
 public class ConversationStateService {
 
 	private final ConversationStateRepository repository;
 	private final ObjectMapper objectMapper;
+
+	public ConversationStateService(ConversationStateRepository repository) {
+		this.repository = repository;
+		this.objectMapper = new ObjectMapper();
+	}
 
 	public void setState(Long userTelegramId, String state, Object data) {
 		Optional<ConversationState> existing = repository.findByUserTelegramId(userTelegramId);
