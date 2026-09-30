@@ -29,7 +29,7 @@ management:
 
 app:
   telegram:
-    enabled: ${TELEGRAM_ENABLED:false}
+    enabled: ${TELEGRAM_ENABLED:true}
     bot-token: ${TELEGRAM_BOT_TOKEN:}
     allowed-user-ids: ${ALLOWED_USER_IDS:}
   crypto:
@@ -39,5 +39,6 @@ logging:
   level:
     uz.card.vault: INFO
     org.springframework.boot: INFO
+    org.liquibase: DEBUG
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

@@ -5,6 +5,10 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Secrets ###
+.env
+.env.local
+
 ### STS ###
 .apt_generated
 .classpath
@@ -31,7 +35,7 @@ out/
 /nbbuild/
 /dist/
 /nbdist/
-/.nb-gradle/
+/.nb-gradgile/
 
 ### VS Code ###
 .vscode/
