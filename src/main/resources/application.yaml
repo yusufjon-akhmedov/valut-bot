@@ -10,6 +10,9 @@ spring:
     username: ${DB_USERNAME:vault_user}
     password: ${DB_PASSWORD:vault_password}
     driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
   docker:
     compose:
       file: compose.yaml
